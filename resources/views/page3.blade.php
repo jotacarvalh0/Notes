@@ -4,5 +4,6 @@
 @section('content')
     <h1>Welcome View and Blade!</h1>
     <hr>
+    <h3>Page3</h3>
     <h3>The value is: {{ $value }} </h3>
 @endsection
