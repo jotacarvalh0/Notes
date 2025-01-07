@@ -16,9 +16,19 @@ class AuthController extends Controller
     {
         // for validation
         $request->validate(
+            // rules
             [
-                'text_username' => 'required',
-                'text_password' => 'required'
+                'text_username' => 'required | email',
+                'text_password' => 'required | min:6 | max:16'
+            ],
+            //error messages
+            [
+                'text_username.required' => 'Username is required',
+                'text_username.email' => 'Username must be a valid email.',
+
+                'text_password.required' => 'Password is required',
+                'text_password.min' => 'Password must be between 6 and 16 characters long.',
+                'text_password.max' => 'Password must be between 6 and 16 characters long.',
             ]
         );
 
